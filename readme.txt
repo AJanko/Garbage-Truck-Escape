@@ -1,0 +1,1 @@
+Gra Garbage Truck Escape jest prost¹ gr¹ polegaj¹ca na omijaniu przeszkód. Zosta³a napisana w jêzyku python przy u¿yciu biblioteki pygame.
