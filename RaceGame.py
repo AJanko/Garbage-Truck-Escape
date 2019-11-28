@@ -110,10 +110,10 @@ def game_loop():
                 if event.key == pygame.K_UP or event.key == pygame.K_DOWN:
                     y_change = 0
 
-        x += x_change           #pozycja samochodu
+        x += x_change           #car position
         y += y_change
         
-        gameDisplay.blit(background_image, [0,0])       #wyswietlanie tla
+        gameDisplay.blit(background_image, [0,0])
         
         things(thing_startx, thing_starty)
         dg = dodged % 10
@@ -125,7 +125,7 @@ def game_loop():
         car(x,y)
         things_dodged(dodged)
 
-        if x > display_width - car_width or x < 0:  #Jesli pojazd wyjedzie poza droge
+        if x > display_width - car_width or x < 0:
             crash()
 
         if thing_starty > display_height:
@@ -135,7 +135,6 @@ def game_loop():
             if (dodged % 7 == 0):
                 thing_speed += 1
 
-        #print(dg,"-----",sa_startx,"-",sa_starty)
         if sa_starty > 1500:
             if (dg == 0):
                 sa_starty = 0 - sa_height
@@ -147,7 +146,6 @@ def game_loop():
             if thing_starty + thing_height > y + car_height > thing_starty:
                 crash()
 
-        #if kolizja z speed_addition then car_speed_change += 1 and point undisplay
         if sa_startx + sa_width > x  > sa_startx - car_width:
             if sa_starty + sa_height > y > sa_starty:
                 car_speed_change += 1
